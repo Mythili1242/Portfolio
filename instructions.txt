@@ -1,0 +1,27 @@
+1) create a 3d screen
+to implement 3d in our react app,we need to install a package
+npm install @react-three/fiber
+react three fiber is a react renderer for 3d screen
+https://docs.pmnd.rs/react-three-fiber/getting-started/introduction
+import {Canvas} from "@react-three/fiber";
+canvas acts as a root component for entire 3d screen.all 3d objects and lights are rendered within this
+canvas is a part of react three fiber library,a react renderer for threeJs
+whenever we are rendering something inside a canvas it should be some 3d property.here loader code in not 3d.to convert it,we have to use 
+react three drei which is an addition to react three fiber.it helps with cameras ,cpntrols
+npm install @react-three/drei
+import {html} from "@react-three/drei";
+npm i @react-spring/three
+
+use sketchfab for models.download glb and drag it to https://gltf.pmnd.rs/
+
+2)npm i @emailjs/browser
+create an account.sign in.create a connection copy service id.allow on behalf
+service id:service_lks596g
+go to email templates->edit content->edit something for ex remove emailjs
+email templates:settings->copy template id :template_34t59qb
+copy public key from account:U4gewYdXMFbGvT5Ro
+SAVE IN .env file
+
+
+
+--->npm i react-vertical-timeline-component
