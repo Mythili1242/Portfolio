@@ -27,6 +27,15 @@ const Home = () => {
     }
   },[isPlayingMusic])
 
+  useEffect(() => {
+    // Add or remove the "no-scroll" class based on whether it's the home page
+    if (currentStage === 1) {
+      document.body.classList.add('no-scroll');
+    } else {
+      document.body.classList.remove('no-scroll');
+    }
+  }, [currentStage]);
+
 const adjustIslandForScreenSize=()=>{
   let screenScale=null;
   let screenPosition=[0,-6.5,-43];
@@ -82,8 +91,8 @@ camera={{near:0.1,far:1000}}>
 <Plane isRotating={isRotating} scale={planeScale} position={planePosition} rotation={[0,20,0]} />
 </Suspense>
 </Canvas>
-<div style={{position:"absolute",bottom:"0",left:"0"}}>
-  <img src={isPlayingMusic?soundoff:soundon} style={{cursor:"pointer"}} width={50} height={50} onClick={()=>setIsPlayingMusic(!isPlayingMusic)}/>
+<div style={{position:"fixed",bottom:"0",left:"0"}}>
+  <img src={isPlayingMusic?soundoff:soundon} style={{cursor:"pointer"}} alt='no-img' width={50} height={50} onClick={()=>setIsPlayingMusic(!isPlayingMusic)}/>
 </div>
     </section>
   )
