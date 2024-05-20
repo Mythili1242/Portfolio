@@ -8,16 +8,16 @@ import Bird from '../models/Bird';
 import Plane from '../models/Plane';
 import sakura from "../assets/sakura.mp3";
 import { soundoff, soundon } from '../assets/icons';
-
+  
 const Home = () => {
   const audioRef=useRef(new Audio(sakura));
   audioRef.current.volume=0.4;
   audioRef.current.loop=true;
-
+   
   const [isRotating,setIsRotating]=useState(false );
   const [currentStage, setCurrentStage] = useState(1);
   const [isPlayingMusic,setIsPlayingMusic]=useState(false);
-
+                
   useEffect(()=>{
     if(isPlayingMusic){
       audioRef.current.play();
